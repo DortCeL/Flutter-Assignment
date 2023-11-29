@@ -8,10 +8,12 @@ class BookCard extends StatelessWidget {
   String authorName;
   String rating;
   String description;
+  List<String> versions;
+  
 
 
   // constructor...
-  BookCard( {required this.bookCoverImage, required this.bookName, required this.authorName, required this.rating, required this.description} );
+  BookCard( {required this.bookCoverImage, required this.bookName, required this.authorName, required this.rating, required this.description, required this.versions} );
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ class BookCard extends StatelessWidget {
               authorName: authorName,
               rating: rating,
               description: description,
+              versions : versions,
             ),
           ),
         );

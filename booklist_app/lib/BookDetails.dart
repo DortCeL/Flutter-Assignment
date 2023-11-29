@@ -7,9 +7,10 @@ class BookDetailsPage extends StatelessWidget {
   String authorName;
   String rating;
   String description;
+  final List<String> versions;
 
   //constructor...
-  BookDetailsPage( {required this.bookCoverImage, required this.bookName, required this.authorName, required this.rating, required this.description} );
+  BookDetailsPage( {required this.bookCoverImage, required this.bookName, required this.authorName, required this.rating, required this.description, required this.versions} );
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +42,19 @@ class BookDetailsPage extends StatelessWidget {
             
           // gotta add dropdown button here....
 
+
+            DropdownButton<String>(
+              items: versions.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                // Handle dropdown value change
+              },
+              hint: Text('Available Editions'),
+            ),
 
 
             SizedBox(height: 16.0),
